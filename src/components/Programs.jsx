@@ -68,14 +68,17 @@ export default function Programs() {
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:border-accent/30 border border-transparent transition-all duration-300 group cursor-pointer"
             >
               <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-primary/40">
-                <img
-                  src={program.image}
-                  alt={program.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  onError={(e) => {
-                    e.target.style.display = 'none'
-                  }}
-                />
+                <picture>
+                  <source srcSet={program.image.replace(/\.[^.]+$/, '.webp')} type="image/webp" />
+                  <img
+                    src={program.image}
+                    alt={program.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      e.target.style.display = 'none'
+                    }}
+                  />
+                </picture>
                 <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent opacity-80"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-2xl font-bold">{program.name}</h3>

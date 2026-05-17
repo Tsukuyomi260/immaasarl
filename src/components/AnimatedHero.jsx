@@ -78,12 +78,15 @@ export default function AnimatedHero({
         }`}>
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <img
-            src="/images/logos/immaa-logo.png"
-            alt="IMMAA"
-            className="h-10 w-10"
-            onError={(e) => e.target.style.display = 'none'}
-          />
+          <picture>
+            <source srcSet="/images/logos/immaa-logo.webp" type="image/webp" />
+            <img
+              src="/images/logos/immaa-logo.png"
+              alt="IMMAA"
+              className="h-10 w-10"
+              onError={(e) => e.target.style.display = 'none'}
+            />
+          </picture>
           <div>
             <h1 className="text-xl font-bold">IMMAA</h1>
             <p className="text-xs">Sarl</p>

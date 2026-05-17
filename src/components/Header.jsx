@@ -21,12 +21,15 @@ export default function Header() {
           {/* Logo */}
           <div className="flex w-full justify-between lg:w-auto">
             <div className="flex-shrink-0 flex items-center gap-3">
-              <img
-                src="/images/logos/immaa-logo.png"
-                alt="IMMAA Logo"
-                className="h-10 w-10"
-                onError={(e) => e.target.style.display = 'none'}
-              />
+              <picture>
+                <source srcSet="/images/logos/immaa-logo.webp" type="image/webp" />
+                <img
+                  src="/images/logos/immaa-logo.png"
+                  alt="IMMAA Logo"
+                  className="h-10 w-10"
+                  onError={(e) => e.target.style.display = 'none'}
+                />
+              </picture>
               <div>
                 <h1 className="text-2xl font-bold text-primary">IMMAA</h1>
                 <p className="text-xs text-primary/75">Sarl</p>
