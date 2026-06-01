@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /.env
+Disallow: /node_modules/
+Disallow: /dist/
+
+Sitemap: https://immaasarl.vercel.app/sitemap.xml
