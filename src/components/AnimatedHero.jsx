@@ -181,7 +181,7 @@ export default function AnimatedHero({
       >
         <motion.h1
           variants={itemVariants}
-          className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl leading-tight -ml-[120px]"
+          className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl leading-tight -ml-[120px] text-white"
         >
           {title}
         </motion.h1>
@@ -200,7 +200,7 @@ export default function AnimatedHero({
           {/* Primary CTA Button */}
           <button
             onClick={ctaButton.onClick}
-            className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-3 rounded-lg hover:bg-white/20 transition-colors cursor-pointer font-semibold"
+            className="bg-accent backdrop-blur-sm border border-accent text-white px-8 py-3 rounded-lg hover:bg-accent/90 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl"
           >
             {ctaButton.text}
           </button>

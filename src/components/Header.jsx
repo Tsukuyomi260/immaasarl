@@ -63,7 +63,7 @@ export default function Header() {
                 <li><a href="#contact" className="block text-gray-700 hover:text-primary transition">Contact</a></li>
               </ul>
             </div>
-            <a href="#contact" className="block w-full text-center lg:w-auto bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary/90 transition cursor-pointer">
+            <a href="#contact" className="block w-full text-center lg:w-auto bg-accent text-white px-6 py-2 rounded-lg hover:bg-accent/90 transition cursor-pointer">
               Nous Contacter
             </a>
           </div>
