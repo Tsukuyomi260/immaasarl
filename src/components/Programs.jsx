@@ -65,7 +65,7 @@ export default function Programs() {
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
               }}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group cursor-pointer"
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl hover:border-accent/30 border border-transparent transition-all duration-300 group cursor-pointer"
             >
               <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-primary/40">
                 <img

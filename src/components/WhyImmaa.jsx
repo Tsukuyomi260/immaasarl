@@ -65,7 +65,7 @@ export default function WhyImmaa() {
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
               }}
-              className="bg-gradient-to-br from-light to-primary/10 rounded-lg p-6 border border-amber-200"
+              className="bg-gradient-to-br from-light to-primary/10 rounded-lg p-6 border border-accent/20 hover:border-accent hover:shadow-lg hover:shadow-accent/10 transition-all duration-300"
             >
               <h3 className="text-lg font-semibold text-primary mb-2">{reason.title}</h3>
               <p className="text-gray-700">{reason.description}</p>

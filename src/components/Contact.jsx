@@ -115,7 +115,7 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-white/50 focus:bg-white/20 text-white placeholder-white/40 backdrop-blur-sm transition"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-accent focus:bg-white/20 focus:shadow-lg focus:shadow-accent/30 text-white placeholder-white/40 backdrop-blur-sm transition"
                 placeholder="Jean Dupont"
               />
             </div>
@@ -128,7 +128,7 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-white/50 focus:bg-white/20 text-white placeholder-white/40 backdrop-blur-sm transition"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-accent focus:bg-white/20 focus:shadow-lg focus:shadow-accent/30 text-white placeholder-white/40 backdrop-blur-sm transition"
                 placeholder="jean@example.com"
               />
             </div>
@@ -140,7 +140,7 @@ export default function Contact() {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-white/50 focus:bg-white/20 text-white placeholder-white/40 backdrop-blur-sm transition"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-accent focus:bg-white/20 focus:shadow-lg focus:shadow-accent/30 text-white placeholder-white/40 backdrop-blur-sm transition"
               >
                 <option value="" className="text-gray-900">Sélectionner un sujet</option>
                 <option value="catering" className="text-gray-900">Demande de Catering</option>
@@ -157,14 +157,14 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows="4"
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-white/50 focus:bg-white/20 text-white placeholder-white/40 backdrop-blur-sm transition resize-none"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl focus:outline-none focus:border-accent focus:bg-white/20 focus:shadow-lg focus:shadow-accent/30 text-white placeholder-white/40 backdrop-blur-sm transition resize-none"
                 placeholder="Votre message..."
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-white text-primary font-bold py-3 rounded-xl hover:bg-white/90 transition cursor-pointer mt-6 shadow-lg"
+              className="w-full bg-accent text-white font-bold py-3 rounded-xl hover:bg-accent/90 transition cursor-pointer mt-6 shadow-lg hover:shadow-xl"
             >
               Envoyer le Message
             </button>

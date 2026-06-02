@@ -76,7 +76,7 @@ const TestimonialsColumn = ({ testimonials, duration = 10, delay = 0 }) => {
             {testimonials.map((testimonial, i) => (
               <div
                 key={i}
-                className="p-8 rounded-2xl border border-gray-200 shadow-lg shadow-primary/5 bg-white hover:shadow-xl hover:border-primary/20 transition-all duration-300"
+                className="p-8 rounded-2xl border border-gray-200 shadow-lg shadow-primary/5 bg-white hover:shadow-xl hover:border-accent hover:shadow-accent/20 transition-all duration-300"
               >
                 <p className="text-gray-700 mb-6 leading-relaxed">"{testimonial.text}"</p>
                 <div className="flex items-center gap-3">
