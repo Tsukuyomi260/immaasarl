@@ -73,9 +73,9 @@ export default function AnimatedHero({
       >
         <div className={`mx-auto flex items-center justify-between transition-all duration-300 ${
           isScrolled
-            ? 'max-w-4xl px-6 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 h-16'
-            : 'max-w-7xl px-6 md:px-12 h-20'
-        } text-white`}>
+            ? 'max-w-4xl px-6 bg-white rounded-2xl border border-gray-200 shadow-lg h-16 text-gray-900'
+            : 'max-w-7xl px-6 md:px-12 h-20 text-white'
+        }`}>
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img
@@ -96,7 +96,11 @@ export default function AnimatedHero({
             <a
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-white/80 transition-colors hover:text-white"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled
+                  ? 'text-gray-700 hover:text-primary'
+                  : 'text-white/80 hover:text-white'
+              }`}
             >
               {link.label}
             </a>
@@ -107,7 +111,11 @@ export default function AnimatedHero({
         <div className="hidden md:block">
           <a
             href="#contact"
-            className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 py-2 rounded-lg hover:bg-white/20 transition-colors cursor-pointer"
+            className={`px-6 py-2 rounded-lg transition-colors cursor-pointer font-medium ${
+              isScrolled
+                ? 'bg-primary text-white hover:bg-primary/90'
+                : 'bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20'
+            }`}
           >
             Nous Contacter
           </a>
@@ -115,7 +123,7 @@ export default function AnimatedHero({
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className={`md:hidden ${isScrolled ? 'text-gray-900' : 'text-white'}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -128,14 +136,22 @@ export default function AnimatedHero({
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute top-20 left-0 right-0 z-20 bg-primary/95 backdrop-blur-sm border-b border-white/10 md:hidden"
+          className={`fixed top-16 left-0 right-0 z-40 md:hidden border-b ${
+            isScrolled
+              ? 'bg-white border-gray-200'
+              : 'bg-primary/95 border-white/10 backdrop-blur-sm'
+          }`}
         >
           <nav className="flex flex-col p-4 space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-white/80 hover:text-white transition-colors py-2"
+                className={`transition-colors py-2 ${
+                  isScrolled
+                    ? 'text-gray-700 hover:text-primary'
+                    : 'text-white/80 hover:text-white'
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
@@ -143,7 +159,11 @@ export default function AnimatedHero({
             ))}
             <a
               href="#contact"
-              className="block bg-white/10 text-white px-4 py-2 rounded text-center mt-2"
+              className={`block px-4 py-2 rounded text-center mt-2 font-medium ${
+                isScrolled
+                  ? 'bg-primary text-white hover:bg-primary/90'
+                  : 'bg-white/10 text-white hover:bg-white/20'
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Nous Contacter
