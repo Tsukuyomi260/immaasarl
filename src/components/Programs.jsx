@@ -1,0 +1,90 @@
+export default function Programs() {
+  const programs = [
+    {
+      name: "Cuisine Professionnelle",
+      duration: "6-12 mois",
+      target: "Adultes & Jeunes",
+      modules: [
+        "Techniques culinaires de base",
+        "Cuisine gastronomique",
+        "Gestion des stocks alimentaires",
+        "Hygiène et sécurité alimentaire"
+      ]
+    },
+    {
+      name: "Service et Accueil",
+      duration: "4-8 mois",
+      target: "Adultes & Jeunes",
+      modules: [
+        "Techniques de service",
+        "Protocole d'accueil",
+        "Gestion du stress et communication",
+        "Langues étrangères (anglais, français)"
+      ]
+    },
+    {
+      name: "Gestion Hôtelière",
+      duration: "8-12 mois",
+      target: "Adultes en reconversion",
+      modules: [
+        "Management opérationnel",
+        "Comptabilité hôtelière",
+        "Planification événementielle",
+        "Gestion des ressources humaines"
+      ]
+    },
+    {
+      name: "Pâtisserie & Boulangerie",
+      duration: "6-10 mois",
+      target: "Adultes & Jeunes",
+      modules: [
+        "Techniques de pâtisserie française",
+        "Boulangerie artisanale",
+        "Décoration de gâteaux",
+        "Production et commerce"
+      ]
+    }
+  ]
+
+  return (
+    <section id="programs" className="py-20 px-4 bg-gray-50">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-4 text-primary">Programmes de Formation</h2>
+        <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Des parcours adaptés pour développer vos compétences en hôtellerie-restauration
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {programs.map((program, idx) => (
+            <div key={idx} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+              <div className="bg-primary text-white p-6">
+                <h3 className="text-2xl font-bold mb-2">{program.name}</h3>
+                <div className="flex gap-4 text-sm">
+                  <span className="bg-primary/90 px-3 py-1 rounded-full">{program.duration}</span>
+                  <span className="bg-primary/90 px-3 py-1 rounded-full">{program.target}</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h4 className="font-semibold text-primary mb-3">Modules couverts :</h4>
+                <ul className="space-y-2">
+                  {program.modules.map((module, i) => (
+                    <li key={i} className="flex items-start">
+                      <span className="text-accent mr-3 mt-1">•</span>
+                      <span className="text-gray-700">{module}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <a href="#contact" className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition cursor-pointer">
+            S'inscrire à un Programme
+          </a>
+        </div>
+      </div>
+    </section>
+  )
+}
