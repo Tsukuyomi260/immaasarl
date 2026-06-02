@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -33,6 +33,15 @@ export default function AnimatedHero({
   secondaryCta,
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const navLinks = [
     { label: 'Services', href: '#services' },
@@ -56,8 +65,17 @@ export default function AnimatedHero({
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="absolute top-0 z-20 flex h-20 w-full items-center justify-between px-6 md:px-12 text-white"
+        className={`fixed top-0 z-50 px-2 w-full transition-all duration-300 ${
+          isScrolled
+            ? 'py-2'
+            : 'py-4'
+        }`}
       >
+        <div className={`mx-auto flex items-center justify-between transition-all duration-300 ${
+          isScrolled
+            ? 'max-w-4xl px-6 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 h-16'
+            : 'max-w-7xl px-6 md:px-12 h-20'
+        } text-white`}>
         {/* Logo */}
         <div className="flex items-center gap-2">
           <img
@@ -102,6 +120,7 @@ export default function AnimatedHero({
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
+        </div>
       </motion.header>
 
       {/* Mobile Menu */}
