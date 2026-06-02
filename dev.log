@@ -2,82 +2,11 @@
 > immaa-website@0.0.1 dev
 > vite
 
+Re-optimizing dependencies because lockfile has changed
 Port 5173 is in use, trying another one...
+Port 5174 is in use, trying another one...
 
-  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m902[22m[2m[0m ms[22m
+  [32m[1mVITE[22m v5.4.21[39m  [2mready in [0m[1m1642[22m[2m[0m ms[22m
 
-  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5174[22m/[39m
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5175[22m/[39m
 [2m  [32m➜[39m  [1mNetwork[22m[2m: use [22m[1m--host[22m[2m to expose[22m
-[2m17:26:22[22m [36m[1m[vite][22m[39m [32mpage reload [39m[2msrc/main.jsx[22m
-[2m17:26:31[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/AnimatedHero.jsx, /src/index.css[22m
-[2m17:26:36[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/AnimatedHero.jsx, /src/index.css[22m
-[2m17:26:43[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/AnimatedHero.jsx, /src/index.css[22m
-[2m17:26:43[22m [31m[1m[vite][22m[39m [31mInternal server error: D:\Project\IMMAA\src\components\AnimatedHero.jsx: Expected corresponding JSX closing tag for <div>. (123:6)
-
-[0m [90m 121 |[31m           {isMenuOpen [33m?[31m [33m<[31m[33mX[31m className[33m=[31m[32m"w-6 h-6"[31m [35m/> : <Menu className="w-6 h-6" /[31m[33m>[31m}
- [90m 122 |[31m         [33m<[31m[33m/[31m[33mbutton[31m[33m>[31m
-[31m[1m>[22m[31m[90m 123 |[31m       [33m<[31m[33m/[31m[33mmotion[31m[33m.[31mheader[33m>[31m
- [90m     |[31m       [31m[1m^[22m[31m
- [90m 124 |[31m
- [90m 125 |[31m       {[90m/* Mobile Menu */[31m}
- [90m 126 |[31m       {isMenuOpen [33m&&[31m ([0m[39m
-  Plugin: [35mvite:react-babel[39m
-  File: [36mD:/Project/IMMAA/src/components/AnimatedHero.jsx[39m:123:6
-[33m  121|            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-  122|          </button>
-  123|        </motion.header>
-     |        ^
-  124|  
-  125|        {/* Mobile Menu */}[39m
-      at constructor (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:365:19)
-      at JSXParserMixin.raise (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:6616:19)
-      at JSXParserMixin.jsxParseElementAt (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:4739:16)
-      at JSXParserMixin.jsxParseElementAt (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:4710:32)
-      at JSXParserMixin.jsxParseElementAt (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:4710:32)
-      at JSXParserMixin.jsxParseElement (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:4761:17)
-      at JSXParserMixin.parseExprAtom (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:4771:19)
-      at JSXParserMixin.parseExprSubscripts (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:11098:23)
-      at JSXParserMixin.parseUpdate (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:11083:21)
-      at JSXParserMixin.parseMaybeUnary (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:11063:23)
-      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10916:61)
-      at JSXParserMixin.parseExprOps (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10921:23)
-      at JSXParserMixin.parseMaybeConditional (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10898:23)
-      at JSXParserMixin.parseMaybeAssign (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10848:21)
-      at D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10817:39
-      at JSXParserMixin.allowInAnd (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12443:12)
-      at JSXParserMixin.parseMaybeAssignAllowIn (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10817:17)
-      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12510:17)
-      at JSXParserMixin.parseParenAndDistinguishExpression (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:11692:28)
-      at JSXParserMixin.parseExprAtom (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:11348:23)
-      at JSXParserMixin.parseExprAtom (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:4776:20)
-      at JSXParserMixin.parseExprSubscripts (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:11098:23)
-      at JSXParserMixin.parseUpdate (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:11083:21)
-      at JSXParserMixin.parseMaybeUnary (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:11063:23)
-      at JSXParserMixin.parseMaybeUnaryOrPrivate (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10916:61)
-      at JSXParserMixin.parseExprOps (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10921:23)
-      at JSXParserMixin.parseMaybeConditional (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10898:23)
-      at JSXParserMixin.parseMaybeAssign (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10848:21)
-      at JSXParserMixin.parseExpressionBase (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10801:23)
-      at D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10797:39
-      at JSXParserMixin.allowInAnd (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12438:16)
-      at JSXParserMixin.parseExpression (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:10797:17)
-      at JSXParserMixin.parseReturnStatement (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:13159:28)
-      at JSXParserMixin.parseStatementContent (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12815:21)
-      at JSXParserMixin.parseStatementLike (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12784:17)
-      at JSXParserMixin.parseStatementListItem (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12764:17)
-      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:13333:61)
-      at JSXParserMixin.parseBlockBody (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:13326:10)
-      at JSXParserMixin.parseBlock (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:13314:10)
-      at JSXParserMixin.parseFunctionBody (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12117:24)
-      at JSXParserMixin.parseFunctionBodyAndFinish (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12103:10)
-      at D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:13462:12
-      at JSXParserMixin.withSmartMixTopicForbiddingContext (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12420:14)
-      at JSXParserMixin.parseFunction (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:13461:10)
-      at JSXParserMixin.parseExportDefaultExpression (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:13924:19)
-      at JSXParserMixin.parseExport (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:13845:25)
-      at JSXParserMixin.parseStatementContent (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12895:27)
-      at JSXParserMixin.parseStatementLike (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12784:17)
-      at JSXParserMixin.parseModuleItem (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:12761:17)
-      at JSXParserMixin.parseBlockOrModuleBlockBody (D:\Project\IMMAA\node_modules\@babel\parser\lib\index.js:13333:36)
-[2m17:26:54[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/components/AnimatedHero.jsx, /src/index.css[22m
-[2m17:26:58[22m [36m[1m[vite][22m[39m [32mhmr update [39m[2m/src/App.jsx, /src/index.css[22m
