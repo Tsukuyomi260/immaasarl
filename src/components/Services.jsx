@@ -5,6 +5,7 @@ export default function Services() {
   const services = [
     {
       title: "Restauration Collective",
+      image: "IMG-20251017-WA0012.jpg",
       description: "Services de catering haut de gamme pour événements professionnels et privés",
       features: [
         "Menus personnalisés et gastronomiques",
@@ -16,6 +17,7 @@ export default function Services() {
     },
     {
       title: "Formation Professionnelle",
+      image: "IMG-20251017-WA0005.jpg",
       description: "École intégrée de hôtellerie-restauration pour adultes et jeunes",
       features: [
         "Formation pour adultes en reconversion",
@@ -68,7 +70,7 @@ export default function Services() {
             >
               <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary/20 to-primary/40">
                 <img
-                  src={`/images/services/service-${idx + 1}.jpg`}
+                  src={`/images/services/${service.image}`}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   onError={(e) => {
