@@ -73,7 +73,7 @@ export default function AnimatedHero({
       >
         <div className={`mx-auto flex items-center justify-between transition-all duration-300 ${
           isScrolled
-            ? 'max-w-4xl px-6 bg-white rounded-2xl border border-gray-200 shadow-lg h-16 text-gray-900'
+            ? 'max-w-4xl px-6 bg-white/60 backdrop-blur-xl rounded-2xl border border-white/40 shadow-lg h-16 text-gray-900'
             : 'max-w-7xl px-6 md:px-12 h-20 text-white'
         }`}>
         {/* Logo */}
