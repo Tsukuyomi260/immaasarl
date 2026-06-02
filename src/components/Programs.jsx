@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 export default function Programs() {
   const programs = [
     {
@@ -47,16 +49,44 @@ export default function Programs() {
   ]
 
   return (
-    <section id="programs" className="py-20 px-4 bg-gray-50">
+    <motion.section
+      id="programs"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+      className="py-20 px-4 bg-gray-50"
+    >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4 text-primary">Programmes de Formation</h2>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
           Des parcours adaptés pour développer vos compétences en hôtellerie-restauration
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <motion.div
+          className="grid md:grid-cols-2 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+        >
           {programs.map((program, idx) => (
-            <div key={idx} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <motion.div
+              key={idx}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+              }}
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+            >
               <div className="bg-primary text-white p-6">
                 <h3 className="text-2xl font-bold mb-2">{program.name}</h3>
                 <div className="flex gap-4 text-sm">
@@ -75,9 +105,9 @@ export default function Programs() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="mt-12 text-center">
           <a href="#contact" className="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition cursor-pointer">
@@ -85,6 +115,6 @@ export default function Programs() {
           </a>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

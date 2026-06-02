@@ -1,4 +1,5 @@
 import { UtensilsCrossed, BookOpen, CheckCircle } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Services() {
   const services = [
@@ -27,16 +28,44 @@ export default function Services() {
   ]
 
   return (
-    <section id="services" className="py-20 px-4 bg-gray-50">
+    <motion.section
+      id="services"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+      className="py-20 px-4 bg-gray-50"
+    >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4 text-primary">Nos Services</h2>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
           IMMAA combine excellence en restauration et formation professionnelle pour répondre à vos besoins événementiels et éducatifs
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <motion.div
+          className="grid md:grid-cols-2 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+        >
           {services.map((service, idx) => (
-            <div key={idx} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+            <motion.div
+              key={idx}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+              }}
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+            >
               <img
                 src={`/images/services/service-${idx + 1}.jpg`}
                 alt={service.title}
@@ -58,10 +87,10 @@ export default function Services() {
                 ))}
               </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

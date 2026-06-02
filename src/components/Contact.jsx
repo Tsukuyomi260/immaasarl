@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { CheckCircle } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -38,43 +39,88 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="py-20 px-4 bg-primary text-white">
+    <motion.section
+      id="contact"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+      className="py-20 px-4 bg-primary text-white"
+    >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4">Nous Contacter</h2>
         <p className="text-center text-primary/10 mb-12 max-w-2xl mx-auto">
           Vous avez une question sur nos services ou nos programmes ? Contactez-nous directement.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        <motion.div
+          className="grid md:grid-cols-3 gap-8 mb-12"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+        >
           {/* Contact Info */}
-          <div className="bg-primary/90 rounded-lg p-6">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+            }}
+            className="bg-primary/90 rounded-lg p-6"
+          >
             <h3 className="text-xl font-bold mb-4">Adresse</h3>
             <p className="text-primary/10">
               Zogbadjè<br/>
               Abomey-Calavi<br/>
               Bénin
             </p>
-          </div>
+          </motion.div>
 
-          <div className="bg-primary/90 rounded-lg p-6">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+            }}
+            className="bg-primary/90 rounded-lg p-6"
+          >
             <h3 className="text-xl font-bold mb-4">Téléphone</h3>
             <p className="text-primary/10">
               +229 21 XX XX XX<br/>
               <span className="text-sm">Disponible du lun-ven 8h-18h</span>
             </p>
-          </div>
+          </motion.div>
 
-          <div className="bg-primary/90 rounded-lg p-6">
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+            }}
+            className="bg-primary/90 rounded-lg p-6"
+          >
             <h3 className="text-xl font-bold mb-4">Email</h3>
             <p className="text-primary/10">
               contact@immaa.bj<br/>
               <span className="text-sm">Réponse dans 24h</span>
             </p>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Contact Form */}
-        <div className="max-w-2xl mx-auto bg-white text-gray-900 rounded-lg p-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl mx-auto bg-white text-gray-900 rounded-lg p-8"
+        >
           <form onSubmit={handleSubmit}>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
@@ -159,8 +205,8 @@ export default function Contact() {
               </div>
             )}
           </form>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

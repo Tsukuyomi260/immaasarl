@@ -1,4 +1,5 @@
 import { Star } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 export default function Testimonials() {
   const testimonials = [
@@ -29,16 +30,43 @@ export default function Testimonials() {
   ]
 
   return (
-    <section className="py-20 px-4 bg-white">
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+      className="py-20 px-4 bg-white"
+    >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4 text-primary">Témoignages</h2>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
           Ce que disent nos clients et apprenants
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <motion.div
+          className="grid md:grid-cols-2 gap-8"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+        >
           {testimonials.map((testimonial, idx) => (
-            <div key={idx} className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+            <motion.div
+              key={idx}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+              }}
+              className="bg-gray-50 rounded-lg p-6 border border-gray-200"
+            >
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.stars)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 text-accent fill-accent" />
@@ -49,10 +77,10 @@ export default function Testimonials() {
                 <p className="font-semibold text-primary">{testimonial.name}</p>
                 <p className="text-sm text-gray-600">{testimonial.role}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }

@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion'
+
 export default function WhyImmaa() {
   const reasons = [
     {
@@ -27,21 +29,49 @@ export default function WhyImmaa() {
   ]
 
   return (
-    <section id="why" className="py-20 px-4 bg-white">
+    <motion.section
+      id="why"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+      className="py-20 px-4 bg-white"
+    >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4 text-primary">Pourquoi Choisir IMMAA</h2>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
           Nos avantages compétitifs et notre engagement envers l'excellence
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <motion.div
+          className="grid md:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+        >
           {reasons.map((reason, idx) => (
-            <div key={idx} className="bg-gradient-to-br from-light to-primary/10 rounded-lg p-6 border border-amber-200">
+            <motion.div
+              key={idx}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+              }}
+              className="bg-gradient-to-br from-light to-primary/10 rounded-lg p-6 border border-amber-200"
+            >
               <h3 className="text-lg font-semibold text-primary mb-2">{reason.title}</h3>
               <p className="text-gray-700">{reason.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <div className="mt-12 bg-light rounded-lg p-8 border border-amber-200">
           <h3 className="text-2xl font-bold text-primary mb-4">Notre Engagement</h3>
@@ -53,6 +83,6 @@ export default function WhyImmaa() {
           </p>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
