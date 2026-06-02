@@ -3,8 +3,8 @@ import { motion } from 'framer-motion'
 export default function Programs() {
   const programs = [
     {
-      name: "Cuisine Professionnelle",
-      duration: "6-12 mois",
+      name: "Cuisine Appliquée",
+      duration: "12 mois minimum",
       target: "Adultes & Jeunes",
       modules: [
         "Techniques culinaires de base",
@@ -14,30 +14,8 @@ export default function Programs() {
       ]
     },
     {
-      name: "Service et Accueil",
-      duration: "4-8 mois",
-      target: "Adultes & Jeunes",
-      modules: [
-        "Techniques de service",
-        "Protocole d'accueil",
-        "Gestion du stress et communication",
-        "Langues étrangères (anglais, français)"
-      ]
-    },
-    {
-      name: "Gestion Hôtelière",
-      duration: "8-12 mois",
-      target: "Adultes en reconversion",
-      modules: [
-        "Management opérationnel",
-        "Comptabilité hôtelière",
-        "Planification événementielle",
-        "Gestion des ressources humaines"
-      ]
-    },
-    {
       name: "Pâtisserie & Boulangerie",
-      duration: "6-10 mois",
+      duration: "12 mois minimum",
       target: "Adultes & Jeunes",
       modules: [
         "Techniques de pâtisserie française",
@@ -85,13 +63,15 @@ export default function Programs() {
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
               }}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group cursor-pointer"
             >
-              <div className="bg-primary text-white p-6">
-                <h3 className="text-2xl font-bold mb-2">{program.name}</h3>
-                <div className="flex gap-4 text-sm">
-                  <span className="bg-primary/90 px-3 py-1 rounded-full">{program.duration}</span>
-                  <span className="bg-primary/90 px-3 py-1 rounded-full">{program.target}</span>
+              <div className="relative bg-gradient-to-br from-primary to-primary/80 text-white p-8 h-40 flex flex-col justify-between group-hover:from-primary/90">
+                <div>
+                  <h3 className="text-2xl font-bold mb-4">{program.name}</h3>
+                </div>
+                <div className="flex gap-3 text-xs">
+                  <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full font-semibold">{program.duration}</span>
+                  <span className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full font-semibold">{program.target}</span>
                 </div>
               </div>
               <div className="p-6">

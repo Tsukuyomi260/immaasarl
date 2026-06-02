@@ -46,9 +46,9 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm">
-              <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" /> Zogbadjè, Abomey-Calavi</li>
-              <li className="flex items-start gap-2"><Phone className="w-4 h-4 mt-0.5 flex-shrink-0" /> +229 21 XX XX XX</li>
-              <li className="flex items-start gap-2"><Mail className="w-4 h-4 mt-0.5 flex-shrink-0" /> contact@immaa.bj</li>
+              <li className="flex items-start gap-2"><MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" /> Calavi Zogbadjè, Chapelle St.Jean Eudes</li>
+              <li className="flex items-start gap-2"><Phone className="w-4 h-4 mt-0.5 flex-shrink-0" /> +229 0149299999</li>
+              <li className="flex items-start gap-2"><Mail className="w-4 h-4 mt-0.5 flex-shrink-0" /> maisonimmaa@gmail.com</li>
               <li className="flex items-start gap-2"><Clock className="w-4 h-4 mt-0.5 flex-shrink-0" /> Lun-Ven: 8h-18h</li>
             </ul>
           </div>
@@ -57,7 +57,7 @@ export default function Footer() {
         <hr className="border-gray-700 my-8" />
 
         <div className="flex flex-col md:flex-row justify-between items-center text-sm">
-          <p>&copy; 2024 IMMAA Sarl. Tous droits réservés.</p>
+          <p>&copy; 2026 IMMAA Sarl. Tous droits réservés.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <a href="#" className="hover:text-white transition">Politique de Confidentialité</a>
             <a href="#" className="hover:text-white transition">Conditions d'Utilisation</a>

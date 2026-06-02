@@ -78,8 +78,9 @@ export default function Contact() {
           >
             <h3 className="text-xl font-bold mb-4">Adresse</h3>
             <p className="text-primary/10">
-              Zogbadjè<br/>
-              Abomey-Calavi<br/>
+              Calavi Zogbadjè<br/>
+              Non loin de la Chapelle<br/>
+              St.Jean Eudes<br/>
               Bénin
             </p>
           </motion.div>
@@ -93,7 +94,7 @@ export default function Contact() {
           >
             <h3 className="text-xl font-bold mb-4">Téléphone</h3>
             <p className="text-primary/10">
-              +229 21 XX XX XX<br/>
+              +229 0149299999<br/>
               <span className="text-sm">Disponible du lun-ven 8h-18h</span>
             </p>
           </motion.div>
@@ -107,7 +108,7 @@ export default function Contact() {
           >
             <h3 className="text-xl font-bold mb-4">Email</h3>
             <p className="text-primary/10">
-              contact@immaa.bj<br/>
+              maisonimmaa@gmail.com<br/>
               <span className="text-sm">Réponse dans 24h</span>
             </p>
           </motion.div>

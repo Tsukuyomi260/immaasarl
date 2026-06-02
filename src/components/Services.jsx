@@ -64,20 +64,25 @@ export default function Services() {
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
               }}
-              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition"
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group cursor-pointer"
             >
-              <img
-                src={`/images/services/service-${idx + 1}.jpg`}
-                alt={service.title}
-                className="w-full h-48 object-cover"
-                onError={(e) => {
-                  e.target.style.display = 'none'
-                }}
-              />
+              <div className="relative h-64 overflow-hidden bg-gradient-to-br from-primary/20 to-primary/40">
+                <img
+                  src={`/images/services/service-${idx + 1}.jpg`}
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  onError={(e) => {
+                    e.target.style.display = 'none'
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-transparent opacity-80"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <service.icon className="w-12 h-12 text-white mb-3" />
+                  <h3 className="text-2xl font-bold text-white">{service.title}</h3>
+                </div>
+              </div>
               <div className="p-8">
-                <service.icon className="w-12 h-12 text-primary mb-4" />
-              <h3 className="text-2xl font-bold text-primary mb-3">{service.title}</h3>
-              <p className="text-gray-600 mb-6">{service.description}</p>
+              <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
               <ul className="space-y-2">
                 {service.features.map((feature, i) => (
                   <li key={i} className="flex items-start">
