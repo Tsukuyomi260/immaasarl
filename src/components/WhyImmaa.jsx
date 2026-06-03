@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion'
+import React, { useState, useEffect, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 import { Clock, Building2, Users, Truck, BookOpen, MapPin, Award } from 'lucide-react'
 
 export default function WhyImmaa() {
@@ -48,17 +49,42 @@ export default function WhyImmaa() {
   ]
 
   const Counter = ({ number, unit }) => {
+    const [count, setCount] = useState(0)
+    const ref = useRef(null)
+    const isInView = useInView(ref, { once: true, margin: "-100px" })
+
     const numValue = parseInt(number)
+
+    useEffect(() => {
+      if (!isInView) return
+
+      let start = 0
+      const end = numValue
+      const duration = 2000
+      const increment = end / (duration / 30)
+
+      const timer = setInterval(() => {
+        start += increment
+        if (start >= end) {
+          setCount(end)
+          clearInterval(timer)
+        } else {
+          setCount(Math.floor(start))
+        }
+      }, 30)
+
+      return () => clearInterval(timer)
+    }, [isInView, numValue])
+
     return (
-      <div className="text-center">
+      <div ref={ref} className="text-center">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.5 }}
           transition={{ duration: 0.5 }}
           className="text-4xl md:text-5xl font-bold text-accent mb-2"
         >
-          {number}
+          {count}{number.includes('+') ? '+' : ''}
         </motion.div>
         <div className="text-sm text-gray-600 font-medium">{unit}</div>
       </div>
