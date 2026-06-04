@@ -181,14 +181,14 @@ export default function AnimatedHero({
       >
         <motion.h1
           variants={itemVariants}
-          className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl leading-tight md:-ml-[120px] text-white"
+          className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight md:-ml-[120px] text-white"
         >
           {title}
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:-ml-[120px]"
+          className="mt-6 max-w-2xl text-base sm:text-lg leading-7 sm:leading-8 text-white/80 md:-ml-[120px]"
         >
           {description}
         </motion.p>
@@ -200,7 +200,7 @@ export default function AnimatedHero({
           {/* Primary CTA Button */}
           <button
             onClick={ctaButton.onClick}
-            className="bg-accent backdrop-blur-sm border border-accent text-white px-8 py-3 rounded-lg hover:bg-accent/90 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl"
+            className="bg-accent backdrop-blur-sm border border-accent text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg hover:bg-accent/90 transition-colors cursor-pointer font-semibold shadow-lg hover:shadow-xl text-sm sm:text-base"
           >
             {ctaButton.text}
           </button>
@@ -209,7 +209,7 @@ export default function AnimatedHero({
           {secondaryCta && (
             <button
               onClick={secondaryCta.onClick}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-3 rounded-lg hover:bg-white/20 transition-colors cursor-pointer font-semibold"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg hover:bg-white/20 transition-colors cursor-pointer font-semibold text-sm sm:text-base"
             >
               {secondaryCta.text}
             </button>
