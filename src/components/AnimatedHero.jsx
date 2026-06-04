@@ -177,25 +177,25 @@ export default function AnimatedHero({
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-10 flex flex-col items-start justify-center text-left px-6 md:pl-0 md:pr-12 max-w-4xl w-full text-white"
+        className="relative z-10 flex flex-col items-start justify-center text-left px-6 md:px-12 max-w-4xl w-full text-white"
       >
         <motion.h1
           variants={itemVariants}
-          className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl leading-tight -ml-[120px] text-white"
+          className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl leading-tight md:-ml-[120px] text-white"
         >
           {title}
         </motion.h1>
 
         <motion.p
           variants={itemVariants}
-          className="mt-6 max-w-2xl text-lg leading-8 text-white/80 -ml-[120px]"
+          className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:-ml-[120px]"
         >
           {description}
         </motion.p>
 
         <motion.div
           variants={itemVariants}
-          className="mt-10 flex flex-col sm:flex-row items-center gap-4 -ml-[120px]"
+          className="mt-10 flex flex-col sm:flex-row items-center gap-4 md:-ml-[120px]"
         >
           {/* Primary CTA Button */}
           <button

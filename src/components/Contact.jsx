@@ -67,7 +67,7 @@ export default function Contact() {
       className="min-h-screen bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-white flex items-center px-4 py-20"
     >
       <div className="w-full max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Side - Text */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
