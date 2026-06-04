@@ -21,21 +21,40 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Simulate form submission
-    console.log('Form submitted:', formData)
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
+
+    try {
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
       })
-    }, 3000)
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSubmitted(true)
+        setTimeout(() => {
+          setSubmitted(false)
+          setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            subject: '',
+            message: ''
+          })
+        }, 3000)
+      } else {
+        console.error('Error:', data.error)
+        alert('Erreur lors de l\'envoi du message. Veuillez réessayer.')
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+      alert('Erreur de connexion. Assurez-vous que le serveur est en cours d\'exécution.')
+    }
   }
 
   return (

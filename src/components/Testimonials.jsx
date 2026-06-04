@@ -7,7 +7,7 @@ export default function Testimonials() {
       name: "Jean-Pierre Akakpo",
       role: "Chef d'Entreprise",
       text: "IMMAA a assuré le catering de notre gala d'entreprise. Service impeccable et cuisine exceptionnelle. Nos clients étaient ravis !",
-      image: "https://api.dicebear.com/7.x/avataaars/svg?seed=jean-pierre"
+      image: "https://api.dicebear.com/7.x/personas/svg?seed=jean-pierre&scale=80"
     },
     {
       name: "Marie Traore",
